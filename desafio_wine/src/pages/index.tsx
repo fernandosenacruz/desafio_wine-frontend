@@ -22,7 +22,7 @@ const Home: NextPage = (props) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const { data } = await Http.get(
-      'products?page=1&limit=10'
+      'products'
     )
     return {
         props: {

@@ -26,9 +26,7 @@ export interface IProductProps {
 const Product = (props: IProductProps) => {
     return (
         <div className=''>
-            <h3 
-                // className={styles.product__title}
-            >{props.product.name}</h3>
+            <h3>{props.product.name}</h3>
             <div>
                 <Image
                     src={props.product.flag}
@@ -41,9 +39,7 @@ const Product = (props: IProductProps) => {
                 <span>{props.product.classification}</span>
                 <span>{props.product.size}</span>
             </div>
-            <div 
-                // className={styles.product__image}
-            >
+            <div>
                 <Image 
                     src={props.product.image}
                     alt="imagem da garrafa de vinho"
@@ -53,9 +49,7 @@ const Product = (props: IProductProps) => {
             </div>
             <div>
                 <h3>Descrição</h3>
-                <p 
-                    // className={styles.product__description}
-                >{props.product.sommelierComment}</p>
+                <p>{props.product.sommelierComment}</p>
             </div>
             <div>
                 <span>{props.product.discount}% OFF</span>
@@ -69,7 +63,6 @@ const Product = (props: IProductProps) => {
             </div>
             <div className="product__price-button-container">
                 <button
-                    // className={`snipcart-add-item ${styles.product__button}`}
                     data-item-id={props.product.id}
                     data-item-name={props.product.name}
                     data-item-price={props.product.price}
