@@ -30,10 +30,11 @@ const Product = (props: IProductProps) => {
                 // className={styles.product__title}
             >{props.product.name}</h3>
             <div>
-                <img
+                <Image
                     src={props.product.flag}
                     alt="country flag"
-                    style={{ width: '10px', height: '10px'}}
+                    width="16px"
+                    height="16px"
                 />
                 <span>{props.product.country}</span>
                 <span>{props.product.type}</span>
