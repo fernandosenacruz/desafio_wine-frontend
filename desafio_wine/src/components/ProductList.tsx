@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { Http } from "../http/api";
-import Product, {IProduct} from "./Product";
+import {IProduct} from "./Product"
+import ProductCard from "./ProductCard"
 
 interface IProductListProps {
     products: IProduct[]
@@ -9,7 +8,7 @@ interface IProductListProps {
 const ProductList = (props: IProductListProps) => {
     return (
         <div className="product-list">
-            {props.products.map((product, index) => <Product product={product} key={index}/>)}
+            {props.products.map((product, index) => <ProductCard product={product} key={index}/>)}
         </div>
     )
 }

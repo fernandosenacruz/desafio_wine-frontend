@@ -19,7 +19,7 @@ export interface IProduct {
     type: string
 }
 
-interface IProductProps {
+export interface IProductProps {
     product: IProduct
 }
 
@@ -32,7 +32,7 @@ const Product = (props: IProductProps) => {
             <div>
                 <Image
                     src={props.product.flag}
-                    alt="country flag"
+                    alt="bandeira do país de origem do vinho"
                     width="16px"
                     height="16px"
                 />
@@ -44,7 +44,12 @@ const Product = (props: IProductProps) => {
             <div 
                 // className={styles.product__image}
             >
-                <img src={props.product.image} alt={props.product.image} />
+                <Image 
+                    src={props.product.image}
+                    alt="imagem da garrafa de vinho"
+                    width="381px"
+                    height="579px"
+                />
             </div>
             <div>
                 <h3>Descrição</h3>
@@ -54,7 +59,11 @@ const Product = (props: IProductProps) => {
             </div>
             <div>
                 <span>{props.product.discount}% OFF</span>
-                <span>R$ {props.product.price}</span>
+                <span
+                style={{textDecoration: "line-through"}}
+                >
+                    R$ {props.product.price}
+                </span>
                 <span>R$ {props.product.priceMember}</span>
                 <span>PREÇO NÃO SÓCIO R$ {props.product.priceNonMember}</span>
             </div>
