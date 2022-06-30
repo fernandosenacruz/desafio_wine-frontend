@@ -19,15 +19,19 @@ const Home: NextPage = (props) => {
   )
 }
 
-export default Home
-
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { data } = await Http.get(
-                'products?page=1&limit=10'
-            )
+  try {
+    const { data } = await Http.get(
+      'products?page=1&limit=10'
+    )
     return {
         props: {
             products: data
         }
     }
+  } catch (error) {
+    console.log(error)
+  }
 }
+
+export default Home

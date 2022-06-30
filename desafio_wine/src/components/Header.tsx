@@ -6,7 +6,7 @@ export default function Header() {
             <div>
                 <Image
                     src='/blacklogo_wine.svg'
-                    alt="country flag"
+                    alt="Lodo da empresa Wine"
                     width="100px"
                     height="28px"
                 />
@@ -20,8 +20,22 @@ export default function Header() {
             </div>
             <div>
                 <span>lupa</span>
-                <span>user</span>
-                <span>carrinho</span>
+                <span>
+                    <Image
+                    src='/contalogo_user.svg'
+                    alt="carrinho"
+                    width="56px"
+                    height="59px"
+                    />
+                </span>
+                <button>
+                    <Image
+                    src='/wineboxcart.svg'
+                    alt="carrinho"
+                    width="56px"
+                    height="56px"
+                    />
+                </button>
             </div>
         </header>
     )
