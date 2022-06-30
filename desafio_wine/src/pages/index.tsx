@@ -12,7 +12,7 @@ const Home: NextPage = (props) => {
       </Head>
 
       <main className="main">
-        <ProductList products={props.products.items}/>
+        <ProductList products={props.products}/>
       </main>
       
     </div>
@@ -22,7 +22,7 @@ const Home: NextPage = (props) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const { data } = await Http.get(
-      'products'
+      'products?page=1&limit=10'
     )
     return {
         props: {
