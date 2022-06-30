@@ -1,24 +1,25 @@
 import Image from "next/image";
+import { StyledHeader, StyledLogo, StyledNav } from "../../styles/Header.styled";
 
 export default function Header() {
     return (
-        <header >
-            <div>
+        <StyledHeader >
+            <StyledLogo style={{ flexGrow: "1"}}>
                 <Image
                     src='/blacklogo_wine.svg'
                     alt="Lodo da empresa Wine"
                     width="100px"
                     height="28px"
                 />
-            </div>
-            <div>
+            </StyledLogo>
+            <StyledNav style={{ flexGrow: "8"}}>
                 <h6>Clube</h6>
                 <h6>Loja</h6>
                 <h6>Produtores</h6>
                 <h6>Ofertas</h6>
                 <h6>Eventos</h6>
-            </div>
-            <div>
+            </StyledNav>
+            <StyledLogo style={{ flexGrow: "3"}}>
                 <span>lupa</span>
                 <span>
                     <Image
@@ -36,7 +37,7 @@ export default function Header() {
                     height="56px"
                     />
                 </button>
-            </div>
-        </header>
+            </StyledLogo>
+        </StyledHeader>
     )
 }
