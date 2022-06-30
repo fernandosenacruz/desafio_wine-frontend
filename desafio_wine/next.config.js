@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "img.wine.com.br"
+      "img.wine.com.br",
+      "www.wine.com.br"
     ],
     formats: ['image/avif', 'image/webp']
   }
