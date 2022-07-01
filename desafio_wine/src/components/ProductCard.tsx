@@ -18,6 +18,12 @@ const ProductCard = (props: IProductProps) => {
 			: localStorage.setItem('cart', JSON.stringify([wine]));
   };
 
+	const ximira = (id) => {
+		const wine = products.items.find((product) => product.id === +id);
+
+		setProduct(wine)
+	}
+
   useEffect(() => {
 		localStorage.getItem('cart')
 	}, []);
@@ -25,7 +31,7 @@ const ProductCard = (props: IProductProps) => {
   return (
     <div>
 			<Link href={`/wine/${props.product.id}`}>
-				<a>
+				<a onClick={() => ximira(props.product.id)}>
 					<div>
 						<Image
 							src={props.product.image}
