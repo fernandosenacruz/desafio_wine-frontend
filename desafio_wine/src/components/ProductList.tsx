@@ -9,14 +9,19 @@ interface IProductListProps {
 }
 
 const ProductList = () => {
-  const [filter, setFilter] = useState<{ minPrice: number; maxPrice: number } | undefined>();
+  const [filter, setFilter] = useState<
+    { minPrice: number; maxPrice: number } | undefined
+  >();
   const { products, setProducts } = useContext(ProductsContext);
 
   const getProducts = async () => {
     try {
       const { data } = await Http.get(
-        `products?page=1&limit=10${filter ? `&filter=${filter.minPrice}-${filter.maxPrice}` : ''}
-        `);
+        `products?page=1&limit=9${
+          filter ? `&filter=${filter.minPrice}-${filter.maxPrice}` : ''
+        }
+        `
+      );
 
       setProducts(data);
     } catch (error) {
@@ -24,9 +29,9 @@ const ProductList = () => {
     }
   };
 
-    useEffect(() => {
-        getProducts()
-    }, [filter]);
+  useEffect(() => {
+    getProducts();
+  }, [filter]);
 
   return (
     <>
@@ -34,7 +39,10 @@ const ProductList = () => {
         <h4>Refine sua busca</h4>
         <h6>Por preço</h6>
         <div>
-          <label htmlFor="40" onClick={() => setFilter({minPrice: 0, maxPrice: 40})}>
+          <label
+            htmlFor="40"
+            onClick={() => setFilter({ minPrice: 0, maxPrice: 40 })}
+          >
             <input
               id="40"
               type="radio"
@@ -43,7 +51,10 @@ const ProductList = () => {
             />{' '}
             Até R$ 40
           </label>
-          <label htmlFor="60" onClick={() => setFilter({minPrice: 40, maxPrice: 60})}>
+          <label
+            htmlFor="60"
+            onClick={() => setFilter({ minPrice: 40, maxPrice: 60 })}
+          >
             <input
               id="60"
               type="radio"
@@ -52,7 +63,10 @@ const ProductList = () => {
             />{' '}
             R$ 40 A R$ 60
           </label>
-          <label htmlFor="100" onClick={() => setFilter({minPrice: 100, maxPrice: 200})}>
+          <label
+            htmlFor="100"
+            onClick={() => setFilter({ minPrice: 100, maxPrice: 200 })}
+          >
             <input
               id="100"
               type="radio"
@@ -61,7 +75,10 @@ const ProductList = () => {
             />{' '}
             R$ 100 A R$ 200
           </label>
-          <label htmlFor="200" onClick={() => setFilter({minPrice: 200, maxPrice: 500})}>
+          <label
+            htmlFor="200"
+            onClick={() => setFilter({ minPrice: 200, maxPrice: 500 })}
+          >
             <input
               id="200"
               type="radio"
@@ -70,7 +87,10 @@ const ProductList = () => {
             />{' '}
             R$ 200 A R$ 500
           </label>
-          <label htmlFor="500" onClick={() => setFilter({minPrice: 500, maxPrice: 10000})}>
+          <label
+            htmlFor="500"
+            onClick={() => setFilter({ minPrice: 500, maxPrice: 10000 })}
+          >
             <input
               id="500"
               type="radio"
@@ -82,13 +102,11 @@ const ProductList = () => {
         </div>
       </nav>
       <div>
-        <span>
-          {products?.totalItems} produtos
-          encontrados
-        </span>
+        <span>{products?.totalItems} produtos encontrados</span>
         <div className="product-list">
           {products?.items?.map((product, index) => (
-                <ProductCard product={product} key={index} />))}
+            <ProductCard product={product} key={index} />
+          ))}
         </div>
         <div>{}</div>
       </div>
