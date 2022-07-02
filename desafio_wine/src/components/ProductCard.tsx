@@ -5,8 +5,7 @@ import { ProductsContext } from '../context/context';
 import { IProductProps } from './Product';
 
 const ProductCard = (props: IProductProps) => {
-  const { product, setProduct } = useContext(ProductsContext);
-  const { products, setProducts } = useContext(ProductsContext);
+  const { setProduct, products } = useContext(ProductsContext);
 
   const handleClick = ({ id }) => {
     const wine = products.items.find((product) => product.id === +id);
