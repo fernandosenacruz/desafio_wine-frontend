@@ -1,11 +1,21 @@
-import { useRouter } from "next/router";
+import Link from "next/link";
 import Product from "../../../components/Product";
 
 const Wine = () => {
-  const { query: { id } } = useRouter();
-
   return (
-    <Product />
+    <>
+      <Link href="/">
+        <a>
+          <img 
+            src="/voltar.svg"
+            alt="ícone de voltar"
+            width="53px"
+            height="24px"  
+          />
+        </a>
+      </Link>
+      <Product />
+    </>
   )
 }
 
