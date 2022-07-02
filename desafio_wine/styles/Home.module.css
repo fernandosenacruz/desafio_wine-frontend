@@ -265,3 +265,14 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
+
+@media only screen and (max-width: 600px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters {
+    display: none;
+  }
+}

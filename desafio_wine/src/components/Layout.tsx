@@ -1,11 +1,11 @@
-import Header from "./Header";
-import {PropsWithChildren} from "react";
+import Header from './Header';
+import { PropsWithChildren } from 'react';
 
-export default function Layout({ children  }: PropsWithChildren<any>) {
+export default function Layout({ children }: PropsWithChildren<any>) {
   return (
-      <>
-          <Header />
-          <main>{children}</main>
-      </>
-  )
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
+  );
 }

@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="https://firebasestorage.googleapis.com/v0/b/teste-upload-b324a.appspot.com/o/Logo-Wine-990x640.jpeg?alt=media&token=d07a516f-6880-4c8c-8dea-723f36687d95" alt="alt text" width="100%" height="whatever">
 
-## Getting Started
 
-First, run the development server:
+# 🚀 Front end challenge
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Bem-vindo(a). Este é o desafio Front end!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O desafio será implementar um e-commerce para venda de vinhos que deverá ter as seguintes funcionalidades:
+- [ ] Catálogo de produtos com paginação
+- [ x ] Filtragem produtos por preço
+- [ ] Busca por nome do produto
+- [ x ] Adicionar e remover produtos do carrinho
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📋 Instruções ReactJS
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Chegou a hora de colocar a mão na massa!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Siga [esse protótipo](https://www.figma.com/file/gByBxI9GBHKUjXRtO2fFh2/28%2F10-%F0%9F%96%A5-%F0%9F%93%B1---Wine-Test---WEB-%26-APP?node-id=680%3A6449)
+- Utilize Next.js e Typescript
+- Faça a estilização com styled-components
+- Utilize o local storage para gerenciar o carrinho
+- Por favor, inclua no README as instruções de instalação do projeto
+- Sinta-se livre para incluir quaisquer observações
+- Consuma nossa **API Rest** https://documenter.getpostman.com/view/10015622/UVJiiuHi#fe849253-c47a-492f-a860-08350296c570
 
-## Learn More
+## ✔️ Critérios de Avaliação
 
-To learn more about Next.js, take a look at the following resources:
+Além dos requisitos levantados acima, iremos olhar para os seguintes critérios durante a correção do desafio:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Gerenciamento de estado ✔️
+- Componentização ✔️
+- Responsividade + / -
+- Preocupação com usabilidade ✔️
+- Preocupação com acessibilidade
+- Testes e2e
+- Padrões de código ✔️
+- Padrão de commits (_Conventional_)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 😎 Seria legal
+- Fazer deploy na vercel ou em outro local de sua preferência e disponibilizar um link de visualização 
+- Testes unitários
+- Utilização de cache do Next.js
+---
 
-## Deploy on Vercel
+## Instruções de instalação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Clone o projeto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Instale as dependências
+
+### `mpm install`
+
+### Scrips
+
+### Rodar localmente `npm run dev`
+
+## Desafios
+
+- Aprender Next.js
+
+### Entender o funcionamento da ferramenta e adaptar-me com pouco tempo para desenvolvimento (100H aproximadamente) além de tocar os estudos e projetos em paralelos com a Trybe foi meu maior desafio neste teste. Ter serenidade com o prazo, manter-me focado e controlar a ansiedade foi um diferencial. Gostaria de ter usado getServerSideProps, getStaticProps e SWR, contudo não tive tem hábil para aprofundar nestes conceitos. Ma vai pra lista de estudos...
+
+- Gerenciamento de estado e carrinho
+
+### Minha maior dificuldade foi em desenvolver a regra de negócio envolvendo o carrinho, pois usei o localStorage apenas um vez no início do curso. Relembrar e utilizá-lo foi desafiador e ainda está com bugs :(
+
+- Aprender styled component
+- Fazer paginação
+- Desenvolver testes
+- Desenvolver acessibilidade

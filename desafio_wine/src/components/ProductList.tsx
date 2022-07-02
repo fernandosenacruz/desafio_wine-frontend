@@ -1,13 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { ProductsContext } from '../context/context';
 import { Http } from '../http/api';
-import { IProduct } from './Product';
 import ProductCard from './ProductCard';
 import styles from '../../styles/Home.module.css';
-
-interface IProductListProps {
-  products: IProduct[];
-}
 
 const ProductList = () => {
   const [filter, setFilter] = useState<

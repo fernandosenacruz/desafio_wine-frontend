@@ -1,5 +1,5 @@
 import React from 'react';
-import { IProduct } from '../components/Product';
+import { IProduct } from '../interfaces/IProduct';
 
 type ContextType = {
   products: IProduct[];

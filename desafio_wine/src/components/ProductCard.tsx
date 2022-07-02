@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useContext, useEffect } from 'react';
 import { ProductsContext } from '../context/context';
-import { IProductProps } from './Product';
+import { IProductProps } from '../interfaces/IProduct';
 import styles from '../../styles/Home.module.css';
 
 const ProductCard = (props: IProductProps) => {

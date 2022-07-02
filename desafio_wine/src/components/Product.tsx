@@ -1,32 +1,11 @@
 import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
 import { ProductsContext } from '../context/context';
-
-export interface IProduct {
-  avaliations: number;
-  classification: string;
-  country: string;
-  discount: number;
-  flag: string;
-  id: number;
-  image: string;
-  name: string;
-  price: number;
-  priceMember: number;
-  priceNonMember: number;
-  rating: number;
-  region: string;
-  size: string;
-  sommelierComment: string;
-  type: string;
-}
-
-export interface IProductProps {
-  product: IProduct;
-}
+import styles from '../../styles/Details.module.css';
 
 const Product = () => {
-  const { product, products, storage, setStorage } = useContext(ProductsContext);
+  const { product, products, storage, setStorage } =
+    useContext(ProductsContext);
   const [wineCounter, setWineCounter] = useState(0);
 
   const handleInc = ({ id }) => {
@@ -72,8 +51,8 @@ const Product = () => {
   }, [storage, product]);
 
   return (
-    <div className="">
-      <div>
+    <div className={styles.card__details}>
+      <div className={styles.details__img}>
         <Image
           src={product.image}
           alt="imagem da garrafa de vinho"
@@ -81,25 +60,25 @@ const Product = () => {
           height="579px"
         />
       </div>
-      <div>
-        <div>
-          <h6>Vinhos</h6>
+      <div className={styles.details__info}>
+        <div className={styles.country__info}>
+          <h6 className={styles.info_h6}>Vinhos</h6>
           <Image
             src="/arrow.svg"
             alt="seta maior que"
             width="10px"
             height="5.59px"
           />
-          <h6>{product.country}</h6>
+          <h6 className={styles.info_h6}>{product.country}</h6>
           <Image
             src="/arrow.svg"
             alt="seta maior que"
             width="10px"
             height="5.59px"
           />
-          <h6>{product.region}</h6>
+          <h6 className={styles.info_h6_}>{product.region}</h6>
         </div>
-        <h3>{product.name}</h3>
+        <h3 className={styles.details__name}>{product.name}</h3>
         <div>
           <Image
             src={product.flag}
@@ -107,21 +86,24 @@ const Product = () => {
             width="16px"
             height="16px"
           />
-          <span>{product.country}</span>
-          <span>{product.type}</span>
-          <span>{product.classification}</span>
-          <span>{product.size}</span>
+          <span className={styles.more__info}>{product.country}</span>
+          <span className={styles.more__info}>{product.type}</span>
+          <span className={styles.more__info}>{product.classification}</span>
+          <span className={styles.more__info}>{product.size}</span>
+        </div>
+        <div className={styles.details__price}>
+          <span className={styles.price__member}>R$ {product.priceMember}</span>
+          <span className={styles.price__non_member}>
+            NÃO SÓCIO R$ {product.priceNonMember}/UN.
+          </span>
         </div>
         <div>
-          <span>R$ {product.priceMember}</span>
-          <span>NÃO SÓCIO R$ {product.priceNonMember}/UN.</span>
+          <h5>Comentário do Sommelier</h5>
+          <p className={styles.details__p}>{product.sommelierComment}</p>
         </div>
-        <div>
-          <h4>Comentário do Sommelier</h4>
-          <p>{product.sommelierComment}</p>
-        </div>
-        <div>
+        <div className={styles.details__btn}>
           <button
+            className={styles.btn_}
             id={product.id}
             onClick={({ target }) => {
               handleDec(target);
@@ -129,8 +111,9 @@ const Product = () => {
           >
             -
           </button>
-          <span>{wineCounter}</span>
+          <span className={styles.span}>{wineCounter}</span>
           <button
+            className={styles.btn_}
             id={product.id}
             onClick={({ target }) => {
               handleInc(target);
@@ -139,6 +122,7 @@ const Product = () => {
             +
           </button>
           <button
+            className={styles.btn}
             id={product.id}
             onClick={({ target }) => {
               handleInc(target);

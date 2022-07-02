@@ -1,0 +1,135 @@
+.card__details {
+  display: flex;
+}
+
+.details__img {
+  margin-top: 1rem;
+  width: 50%;
+  height: 50%;
+}
+
+.details__info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+}
+
+.country__info {
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+}
+
+.info_h6,
+.info_h6_,
+.price__non_member {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  font-feature-settings: 'liga' off;
+}
+
+.info_h6,
+.info_h6_ {
+  margin: 1rem 1rem 0 1rem;
+}
+
+.info_h6 {
+  color: #c81a78;
+}
+
+.info_h6_,
+.price__non_member {
+  color: #888888;
+}
+
+.details__name {
+  font-family: 'Neo Sans Std';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  color: #111111;
+}
+
+.more__info {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #555555;
+  margin: 0.5rem;
+}
+
+.details__price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price__member {
+  width: 123px;
+  height: 32px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.48675px;
+  color: #c81a78;
+}
+
+.details__p {
+  width: 448px;
+  height: 105px;
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #666666;
+}
+
+.details__btn {
+  background: #7ebc43;
+  color: #ffffff;
+  border: #7ebc43;
+  width: 10rem;
+}
+
+.details__btn:hover,
+.btn:hover {
+  background-position: 100% 0;
+  color: #1d1d1b;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn {
+  padding: 6.6806px 13.3612px;
+  background: #7ebc43;
+  color: #ffffff;
+  border-radius: 3.89354px;
+  border: #7ebc43 solid 1px;
+}
+
+.span {
+  margin-left: 0.3rem;
+}
+
+.btn_ {
+  background-color: #7ebc43;
+  border:#ffffff solid 1.5px;
+  border-radius: 50%;
+  color: #ffffff;
+  margin-left: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .card__details {
+    flex-direction: column;
+    align-items: center;
+  }
+}
