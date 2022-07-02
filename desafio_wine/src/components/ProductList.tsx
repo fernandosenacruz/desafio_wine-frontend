@@ -3,6 +3,7 @@ import { ProductsContext } from '../context/context';
 import { Http } from '../http/api';
 import { IProduct } from './Product';
 import ProductCard from './ProductCard';
+import styles from '../../styles/Home.module.css';
 
 interface IProductListProps {
   products: IProduct[];
@@ -14,31 +15,31 @@ const ProductList = () => {
   >();
   const { products, setProducts } = useContext(ProductsContext);
 
-  const getProducts = async () => {
-    try {
-      const { data } = await Http.get(
-        `products?page=1&limit=9${
-          filter ? `&filter=${filter.minPrice}-${filter.maxPrice}` : ''
-        }
-        `
-      );
-
-      setProducts(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const { data } = await Http.get(
+          `products?page=1&limit=9${
+            filter ? `&filter=${filter.minPrice}-${filter.maxPrice}` : ''
+          }
+          `
+        );
+
+        setProducts(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     getProducts();
-  }, [filter]);
+  }, [filter, setProducts]);
 
   return (
-    <>
-      <nav>
+    <div className={styles.home}>
+      <nav className={styles.filters}>
         <h4>Refine sua busca</h4>
         <h6>Por preço</h6>
-        <div>
+        <div className={styles.filters__price}>
           <label
             htmlFor="40"
             onClick={() => setFilter({ minPrice: 0, maxPrice: 40 })}
@@ -101,16 +102,16 @@ const ProductList = () => {
           </label>
         </div>
       </nav>
-      <div>
+      <div className={styles.catalog}>
         <span>{products?.totalItems} produtos encontrados</span>
-        <div className="product-list">
+        <div className={styles.cards}>
           {products?.items?.map((product, index) => (
             <ProductCard product={product} key={index} />
           ))}
         </div>
         <div>{}</div>
       </div>
-    </>
+    </div>
   );
 };
 

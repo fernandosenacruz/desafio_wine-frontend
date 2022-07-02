@@ -114,3 +114,154 @@
     flex-direction: column;
   }
 }
+
+.home {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters {
+  height: 40vh;
+  margin: 2rem 3rem 0 3rem;
+}
+
+.filters__price {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 3rem 0;
+  font-family: 'Lato';
+  font-weight: 350;
+  font-size: 13px;
+  line-height: 15px;
+  color: #1d1d1b;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 90%;
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  width: 256px;
+  height: 333px;
+  margin: 0.2rem;
+  margin-bottom: 3rem;
+}
+
+.card_h5 {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.222488px;
+  color: #1d1d1b;
+  margin: 0.3rem;
+}
+
+.card_h6 {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 10px;
+  text-align: right;
+  color: #1d1d1b;
+  margin: 0.3rem 0.3rem 0 0.3rem;
+}
+
+.card_discount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.through_price {
+  text-decoration: line-through;
+  height: 15.57px;
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 16px;
+  color: #888888;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+}
+
+.membre_price {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 27px;
+  color: #b6116e;
+}
+
+.discount {
+  height: 13.63px;
+  top: calc(50% - 13.63px / 2);
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ffffff;
+  background: #f79552;
+  border-radius: 1.94677px;
+  margin-right: 1.5rem;
+}
+
+.non_member {
+  margin: 0 0 0.3rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.non_member_price {
+  width: 256px;
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #888888;
+}
+
+.card_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 6.6806px 13.3612px;
+  gap: 9.73px;
+  background: #7ebc43;
+  box-shadow: 0px 0.973384px 1.94677px rgba(0, 0, 0, 0.2);
+  border-radius: 3.89354px;
+}
+
+.btn_add {
+  background: #7ebc43;
+  color: #ffffff;
+  border: #7ebc43;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.btn_add:hover {
+  background-position: 100% 0;
+  color: #1d1d1b;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
