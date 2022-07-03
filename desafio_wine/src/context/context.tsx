@@ -10,7 +10,7 @@ type ContextType = {
   setStorage: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const DEFAULT_VALUE = {
+export const DEFAULT_VALUE = {
   products: {
     page: 1,
     totalPages: 1,

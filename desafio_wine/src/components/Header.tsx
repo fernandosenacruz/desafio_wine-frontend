@@ -6,12 +6,13 @@ import {
   StyledNav,
 } from '../../styles/Header.styled';
 import { ProductsContext } from '../context/context';
+import getParsedCart from '../helpers/getParsedCart';
 
 export default function Header() {
   const { storage, setStorage } = useContext(ProductsContext);
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '');
+    const cart = getParsedCart();
 
     cart && setStorage(cart.length);
   }, [storage, setStorage]);

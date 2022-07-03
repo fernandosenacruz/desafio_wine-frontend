@@ -1,38 +1,35 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useContext, useEffect } from 'react';
-import { ProductsContext } from '../context/context';
+import { DEFAULT_VALUE, ProductsContext } from '../context/context';
 import { IProduct, IProductProps } from '../interfaces/IProduct';
 import styles from '../../styles/Home.module.css';
+import getParsedCart from '../helpers/getParsedCart';
 
 const ProductCard = (props: IProductProps) => {
   const { setProduct, products } = useContext(ProductsContext);
 
-  const handleClick = ({ id }: React.MouseEvent<HTMLElement>) => {
-    const wine = products.items.find((product) => product.id === +id);
+  const handleClick = (id: number) => {
+    const wine = products.items.find((product) => product.id === id);
 
-    const localProducts = JSON.parse(localStorage.getItem('cart') || '');
+    const cart = getParsedCart();
 
-    localProducts
-      ? localStorage.setItem('cart', JSON.stringify([...localProducts, wine]))
+    cart
+      ? localStorage.setItem('cart', JSON.stringify([...cart, wine]))
       : localStorage.setItem('cart', JSON.stringify([wine]));
   };
 
-  const ximira = (id: number) => {
-    const wine = products.items.find((product) => product.id === +id);
+  const setSelectedProduct = (id: number) => {
+    const wine = products.items.find((product) => product.id === id) || DEFAULT_VALUE.product;
 
     setProduct(wine);
   };
-
-  useEffect(() => {
-    localStorage.getItem('cart');
-  }, []);
 
   return (
     <div className={styles.card}>
       <Link href={`/wine/${props.product.id}`}>
         <a
-          onClick={() => ximira(props.product.id)}
+          onClick={() => setSelectedProduct(props.product.id)}
           style={{ textDecoration: 'none' }}
         >
           <div>
@@ -67,10 +64,9 @@ const ProductCard = (props: IProductProps) => {
       </Link>
       <div className={styles.card_btn}>
         <button
-          id={String(props.product.id)}
           className={styles.btn_add}
-          onClick={({ target }: React.MouseEvent<HTMLButtonElement>) => {
-            handleClick(target);
+          onClick={() => {
+            handleClick(+props.product.id);
           }}
         >
           ADICIONAR

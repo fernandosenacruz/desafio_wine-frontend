@@ -3,14 +3,15 @@ import { useContext, useEffect, useState } from 'react';
 import { ProductsContext } from '../context/context';
 import styles from '../../styles/Details.module.css';
 import { IProduct } from '../interfaces/IProduct';
+import getParsedCart from '../helpers/getParsedCart';
 
 const Product = () => {
   const { product, products, storage, setStorage } =
     useContext(ProductsContext);
   const [wineCounter, setWineCounter] = useState(0);
 
-  const handleInc = ({ id }) => {
-    const wine = products.items.find((product: IProduct) => product.id === +id);
+  const handleInc = (id: number) => {
+    const wine = products.items.find((product: IProduct) => product.id === id);
 
     const cart = JSON.parse(localStorage.getItem('cart') || '');
 
@@ -23,13 +24,13 @@ const Product = () => {
     }
   };
 
-  const handleDec = ({ id }) => {
+  const handleDec = (id: number) => {
     const cart = JSON.parse(localStorage.getItem('cart') || '');
 
     let item = [];
 
     if (cart) {
-      item = cart.map((product: IProduct) => product.id).indexOf(+id);
+      item = cart.map((product: IProduct) => product.id).indexOf(id);
 
       if (item !== -1) {
         cart.splice(item, 1);
@@ -42,8 +43,7 @@ const Product = () => {
   };
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '');
-
+    const cart = getParsedCart();
     if (cart) {
       const qnt = cart.filter((wine: IProduct) => wine.id === product.id);
 
@@ -105,9 +105,8 @@ const Product = () => {
         <div className={styles.details__btn}>
           <button
             className={styles.btn_}
-            id={String(product.id)}
-            onClick={({ target }) => {
-              handleDec(target);
+            onClick={() => {
+              handleDec(+product.id);
             }}
           >
             -
@@ -115,18 +114,16 @@ const Product = () => {
           <span className={styles.span}>{wineCounter}</span>
           <button
             className={styles.btn_}
-            id={String(product.id)}
-            onClick={({ target }) => {
-              handleInc(target);
+            onClick={() => {
+              handleInc(+product.id);
             }}
           >
             +
           </button>
           <button
             className={styles.btn}
-            id={String(product.id)}
-            onClick={({ target }) => {
-              handleInc(target);
+            onClick={() => {
+              handleInc(+product.id);
             }}
           >
             Adicionar
