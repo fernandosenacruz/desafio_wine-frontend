@@ -11,7 +11,7 @@ export default function Header() {
   const { storage, setStorage } = useContext(ProductsContext);
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem('cart'));
+    const cart = JSON.parse(localStorage.getItem('cart') || '');
 
     cart && setStorage(cart.length);
   }, [storage, setStorage]);

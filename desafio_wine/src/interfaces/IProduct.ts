@@ -21,6 +21,10 @@ export interface IProductProps {
   product: IProduct;
 }
 
-export interface IProductListProps {
-  products: IProduct[];
+export interface IProducts {
+  page: number;
+  totalPages: number;
+  itemsPerPage: number;
+  totalItems: number;
+  items: IProduct[];
 }

@@ -2,23 +2,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useContext, useEffect } from 'react';
 import { ProductsContext } from '../context/context';
-import { IProductProps } from '../interfaces/IProduct';
+import { IProduct, IProductProps } from '../interfaces/IProduct';
 import styles from '../../styles/Home.module.css';
 
 const ProductCard = (props: IProductProps) => {
   const { setProduct, products } = useContext(ProductsContext);
 
-  const handleClick = ({ id }) => {
+  const handleClick = ({ id }: React.MouseEvent<HTMLElement>) => {
     const wine = products.items.find((product) => product.id === +id);
 
-    const localProducts = JSON.parse(localStorage.getItem('cart'));
+    const localProducts = JSON.parse(localStorage.getItem('cart') || '');
 
     localProducts
       ? localStorage.setItem('cart', JSON.stringify([...localProducts, wine]))
       : localStorage.setItem('cart', JSON.stringify([wine]));
   };
 
-  const ximira = (id) => {
+  const ximira = (id: number) => {
     const wine = products.items.find((product) => product.id === +id);
 
     setProduct(wine);
@@ -67,9 +67,9 @@ const ProductCard = (props: IProductProps) => {
       </Link>
       <div className={styles.card_btn}>
         <button
-          id={props.product.id}
-					className={styles.btn_add}
-          onClick={({ target }) => {
+          id={String(props.product.id)}
+          className={styles.btn_add}
+          onClick={({ target }: React.MouseEvent<HTMLButtonElement>) => {
             handleClick(target);
           }}
         >

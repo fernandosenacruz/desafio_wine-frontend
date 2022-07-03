@@ -3,6 +3,7 @@ import { ProductsContext } from '../context/context';
 import { Http } from '../http/api';
 import ProductCard from './ProductCard';
 import styles from '../../styles/Home.module.css';
+import { IProduct } from '../interfaces/IProduct';
 
 const ProductList = () => {
   const [filter, setFilter] = useState<
@@ -100,7 +101,7 @@ const ProductList = () => {
       <div className={styles.catalog}>
         <span>{products?.totalItems} produtos encontrados</span>
         <div className={styles.cards}>
-          {products?.items?.map((product, index) => (
+          {products?.items?.map((product: IProduct, index: number) => (
             <ProductCard product={product} key={index} />
           ))}
         </div>
